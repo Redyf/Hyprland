@@ -24,7 +24,7 @@
     nixosConfigurations = {
       # FIXME replace with your hostname
       redyf = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; }; # Pass flake inputs to our config
+        specialArgs = { inherit inputs hyprland; }; # Pass flake inputs to our config
         # > Our main nixos configuration file <
         modules = [ ./nixos/configuration.nix hyprland.nixosModules.default
         {programs.hyprland.enable = true;} ];
